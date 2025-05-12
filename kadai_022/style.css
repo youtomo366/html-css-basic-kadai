@@ -1,0 +1,110 @@
+/* Step 3: 全体の初期設定 */
+body, h1, p {
+    margin: 0;
+}
+
+p, a {
+    font-size: 20px;
+}
+
+/* Step 4: header部分のスタイル */
+header {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: rgb(255, 255, 255);
+}
+
+/* Step 5: main部分のスタイル */
+main {
+    padding: 10px;
+}
+
+/* Flex コンテナ設定 */
+#parent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* 各地域の天気ボックス */
+.contents {
+    border: 3px solid rgb(238, 204, 204);
+    flex-basis: 25%;
+    padding: 10px 15px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+/* h2要素のスタイル */
+h2 {
+    font-size: 25px;
+    border-bottom: 3px dotted rgb(236, 122, 122);
+}
+
+/* 疑似要素：h2の前に「●」を表示 */
+h2::before {
+    content: "● ";
+    color: rgb(239, 111, 139);
+    font-size: 20px;
+}
+
+/* 疑似クラス：二番目のp要素の最初の文字を装飾 */
+.contents p:nth-of-type(2)::first-letter {
+    color: rgb(97, 206, 249);
+    font-weight: bold;
+}
+
+/* 画像のスタイル */
+.contents img {
+    margin: 10px 0;
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* フッター部分のスタイル */
+footer {
+    background-color: rgb(244, 79, 79);
+    text-align: center;
+    padding: 10px;
+}
+
+footer a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+/* 訪問済みリンクのスタイル */
+footer a:visited {
+    color: rgb(193, 234, 251);
+}
+
+/* ホバー時のリンクのスタイル */
+footer a:hover {
+    color: rgb(245, 178, 168);
+    text-decoration: underline;
+}
+
+/* レスポンシブデザイン（768px以下） */
+@media screen and (max-width: 768px) {
+    #parent {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contents {
+        flex-basis: 90%;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 25px;
+    }
+}
